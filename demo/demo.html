@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Demo</title>
+	<link rel="stylesheet" href="../css/font-awesome.min.css">
+	<link rel="stylesheet" href="../css/gravestone.css">
+	<script src="../js/jquery.min.js"></script>
+	<script src="../js/jquery.hotkeys.js"></script>
+	<script src="../js/markdown.js"></script>
+	<script src="../js/bootstrap-markdown.js"></script>
+	<script src="../js/bootstrap-markdown.zh.js"></script>
+	<script src="../js/gravestone.js"></script>
+	<style>
+		body {
+			margin: 0;
+		}
+		.center {
+			text-align: center;
+		}
+		.container {
+			width: 600px;
+			margin: 40px auto;
+		}
+	</style>
+	<script>
+		$(function(){
+			$('#editor').gmd({resize: 'auto'});
+		});
+	</script>
+</head>
+<body>
+	<div class="container">
+		<h1 class="center">Demo</h1>
+		<textarea id="editor" cols="160" rows="20"></textarea>
+	</div>
+</body>
+</html>

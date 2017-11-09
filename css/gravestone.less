@@ -1,0 +1,200 @@
+@border: #ddd;
+@tool: #f5f5f5;
+@btn: #484848;
+@edit-bg: #fff;
+
+.md-editor {
+	display: block;
+	border: @border 1px solid;
+	background: @edit-bg;
+	position: relative;
+	box-sizing: border-box;
+	.md-header, .md-footer {
+		display: block;
+		background: @tool;
+		overflow: hidden;
+	}
+	.md-header {
+		top: 0;
+		border-bottom: @border 1px solid;
+	}
+	.md-footer {
+		bottom: 0;
+		border-top: @border 1px solid;
+	}
+	.btn-group {
+		float: left;
+		margin-right: 5px;
+		.btn {
+			background: none;
+			border: none;
+			outline: none;
+			padding: 8px 10px;
+			line-height: 16px;
+			&:hover {
+				background: #fff;
+			}
+		}
+	}
+	.md-controls {
+		float: right;
+		a {
+			color: @btn;
+			padding: 8px 10px;
+			line-height: 16px;
+			display: inline-block;
+			&:hover {
+				background: #fff;
+			}
+		}
+	}
+	.md-input, .md-preview {
+		outline: none;
+		border: none;
+		padding: 10px;
+		width: 100%;
+		display: block;
+		box-sizing: border-box;
+		overflow: auto;
+		background: @edit-bg;
+		font-size: 13px;
+	}
+	.md-preview {
+		line-height: 22px;
+	}
+	.md-fullscreen-controls {
+		display: none;
+	}
+
+	&.md-fullscreen-mode {
+		position: fixed;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		z-index: 100;
+		.md-header, .md-footer {
+			position: fixed;
+			left: 0;
+			width: 100%;
+			z-index: 100;
+		}
+		.md-header {
+			top: 0;
+		}
+		.md-footer {
+			bottom: 0;
+		}
+		.md-input, .md-preview {
+			padding: 44px 10px 10px 10px;
+			width: 100% !important;
+			height: 100% !important;
+			z-index: 100;
+		}
+		.md-controls {
+			display: none;.md-controls
+		}
+		.md-fullscreen-controls {
+			display: inline-block;
+			position: fixed;
+			top: 0;
+			right: 0;
+			z-index: 100;
+			a {
+				color: @btn;
+				padding: 8px 10px;
+				line-height: 16px;
+				display: inline-block;
+				&:hover {
+					background: #fff;
+				}
+			}
+		}
+	}
+}
+
+.md-mask {
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.5);
+	z-index: 999;
+	.md-box {
+		position: fixed;
+		width: 480px;
+		height: 300px;
+		left: 50%;
+		top: 50%;
+		margin: -150px 0 0 -240px;
+		background: #fff;
+		color: #444;
+		box-shadow: 0 4px 4px rgba(0, 0, 0, 0.3);
+		button, input {
+			background: none;
+			border: none;
+			outline: none;
+		}
+		.md-box-header {
+			background: #e0e0e0;
+			padding: 8px 15px;
+			border-bottom: @border 1px solid;
+			overflow: hidden;
+			.md-box-title, .md-box-close {
+				line-height: 24px;
+				height: 24px;
+			}
+			.md-box-title {
+				float: left;
+			}
+			.md-box-close {
+				float: right;
+				color: #444;
+				padding: 0;
+				font-size: 18px;
+			}
+		}
+		.md-box-body {
+			padding:  50px;
+			.md-box-tip {
+				margin-bottom: 15px;
+			}
+			.md-box-field {
+				border: @border 1px solid;
+				position: relative;
+				.md-box-input {
+					padding: 7px 42px 7px 10px;
+					line-height: 18px;
+					height: 18px;
+					width: 326px;
+				}
+				.md-box-upload {
+					position: absolute;
+					top: 0;
+					right: 0;
+					width: 32px;
+					height: 32px;
+					background: @tool;
+					padding: 0;
+					color: #444;
+				}
+				.md-box-file {
+					display: none;
+				}
+			}
+			.md-box-ctrl {
+				margin-top: 40px;
+				text-align: right;
+				button {
+					padding: 8px 15px;
+					margin-left: 10px;
+				}
+				.md-btn-ok {
+					background: @tool;
+					border: @border;
+				}
+			}
+		}
+	}
+}
